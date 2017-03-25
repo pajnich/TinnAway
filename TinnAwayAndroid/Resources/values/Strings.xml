@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">TinnAwayAndroid</string>
+    <string name="sound_generator">Sound generator</string>
+  <string name="sound_mixer">Sound Mixer</string>
+  <string name="sounds_of_nature">Sounds of Nature</string>
+  <string name="alarm_clock">Alarm Clock</string>
+  <string name="authored_music">Authored Music</string>
+  <string name="record_music">Record Music</string>
+  <string name="find_your_frequency">Find Your Frequency</string>
+  <string name="settings">Settings</string>
+  <string name="play">Play</string>
+</resources>
