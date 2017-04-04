@@ -21,12 +21,6 @@ namespace TinnAwayAndroid
             SetContentView (Resource.Layout.Main);
 
             setOnClickListeners();
-
-            /*
-            MediaPlayer _player2;
-            _player2 = MediaPlayer.Create(this, Resource.Raw.FruityFallsSong);
-            _player2.Start();
-            */
         }
 
         private void setOnClickListeners()
@@ -35,6 +29,21 @@ namespace TinnAwayAndroid
             bAuthoredMusic.Click += delegate
             {
                 StartActivity(typeof(AuthoredMusicActivity));
+            };
+            Button bSoundsOfNature = (Button)FindViewById(Resource.Id.bSoundsOfNature);
+            bSoundsOfNature.Click += delegate
+            {
+                StartActivity(typeof(SoundsOfNatureActivity));
+            };
+            Button bSoundGenerator = (Button)FindViewById(Resource.Id.bSoundGenerator);
+            bSoundGenerator.Click += delegate
+            {
+                StartActivity(typeof(SoundGeneratorActivity));
+            };
+            Button bTuner = (Button)FindViewById(Resource.Id.bTuner);
+            bTuner.Click += delegate
+            {
+                StartActivity(typeof(TunerActivity));
             };
         }
     }

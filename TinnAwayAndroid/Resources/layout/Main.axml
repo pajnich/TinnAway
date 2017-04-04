@@ -69,10 +69,10 @@
             android:layout_height="match_parent"
             android:layout_weight="0.25">
         <Button
-            android:text="@string/find_your_frequency"
+            android:text="@string/tuner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/bFindYourFrequency"
+            android:id="@+id/bTuner"
             android:layout_weight="0.5"/>
         <Button
             android:text="@string/settings"

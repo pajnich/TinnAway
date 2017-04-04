@@ -11,7 +11,7 @@
         android:minHeight="25px"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:id="@+id/lvSongs"
+        android:id="@+id/authored_music_lvSongs"
         android:layout_weight="0.7"/>
     <LinearLayout
       android:orientation="vertical"

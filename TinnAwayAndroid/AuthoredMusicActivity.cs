@@ -32,7 +32,7 @@ namespace TinnAwayAndroid
 
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
 
-            ListView lvSongs = (ListView)FindViewById(Resource.Id.lvSongs);
+            ListView lvSongs = (ListView)FindViewById(Resource.Id.authored_music_lvSongs);
             lvSongs.Adapter = adapter;
 
             setListViewItemClickListener(lvSongs);
@@ -43,11 +43,10 @@ namespace TinnAwayAndroid
             lvSongs.ItemClick += (object sender, ItemClickEventArgs e) =>
             {
                 String selectedFromList = (String)lvSongs.GetItemAtPosition(e.Position);
-                var resourceId = (int)typeof(Resource.Raw).GetField(selectedFromList).GetValue(null);
-                MediaPlayer _player2;
-                _player2 = MediaPlayer.Create(this, resourceId);
-                _player2.Start();
-
+                var resourceId = (int)typeof(Resource.Raw).GetField("auth_" + selectedFromList).GetValue(null);
+                MediaPlayer mediaPlayer;
+                mediaPlayer = MediaPlayer.Create(this, resourceId);
+                mediaPlayer.Start();
             };
         }
 
@@ -57,7 +56,11 @@ namespace TinnAwayAndroid
             var fields = typeof(Resource.Raw).GetFields();
             foreach (var fieldInfo in fields)
             {
-                items.Add(fieldInfo.Name);
+                if (fieldInfo.Name.Substring(0, 5).Equals("auth_"))
+                {
+                    items.Add(fieldInfo.Name.Substring(5));
+                }
+                
             }
             return items;
         }
