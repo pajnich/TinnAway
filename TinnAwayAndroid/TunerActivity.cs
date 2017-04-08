@@ -17,6 +17,12 @@ namespace TinnAwayAndroid
     [Activity(Label = "TunerActivity")]
     public class TunerActivity : Activity
     {
+        private Button      bPlay;
+        private TextView    tvFrequency;
+        private SeekBar     sbFrequency;
+
+        private int         currFrequency;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,15 +39,47 @@ namespace TinnAwayAndroid
             }
             PlayAudioTrack(baos.ToByteArray());
             */
-            playSound();
+
+            bPlay       = (Button)  FindViewById(Resource.Id.tuner_bPlay);
+            tvFrequency = (TextView)FindViewById(Resource.Id.tuner_tvFrequency);
+            sbFrequency   = (SeekBar)FindViewById(Resource.Id.tuner_sbFrequency);
+
+            setInitialValues();
+            setListeners();
         }
+
+        private void setInitialValues()
+        {
+            currFrequency           = 750;
+            tvFrequency.Text        = currFrequency.ToString();
+            sbFrequency.Progress    = 50;
+            sbFrequency.Max         = 6000;
+            sbFrequency.SetProgress(currFrequency, true);
+        }
+
+        private void setListeners()
+        {
+            bPlay.Click += delegate
+            {
+                playSound();
+            };
+
+            sbFrequency.ProgressChanged += (object sender, SeekBar.ProgressChangedEventArgs e) => {
+                if (e.FromUser)
+                {
+                    currFrequency       = e.Progress;
+                    tvFrequency.Text    = e.Progress.ToString();
+                }
+            };
+        }
+
         public void playSound()
         {
-            var duration = 1;
-            var sampleRate = 8000;
+            var duration = 3;
+            var sampleRate = 44100;
             var numSamples = duration * sampleRate;
             var sample = new double[numSamples];
-            var freqOfTone = 1900;
+            var freqOfTone = currFrequency;
             byte[] generatedSnd = new byte[2 * numSamples];
 
             for (int i = 0; i < numSamples; ++i)
@@ -57,7 +95,7 @@ namespace TinnAwayAndroid
                 generatedSnd[idx++] = (byte)((val & 0xff00) >> 8);
             }
 
-            var track = new AudioTrack(global::Android.Media.Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Static);
+            var track = new AudioTrack(global::Android.Media.Stream.Music, sampleRate, ChannelOut.Stereo, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Static);
             track.Write(generatedSnd, 0, numSamples);
             track.Play();
         }

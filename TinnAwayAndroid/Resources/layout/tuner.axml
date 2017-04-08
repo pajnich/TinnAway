@@ -2,4 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <View
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="0.7" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tuner_sbFrequency"
+        android:layout_weight="0.7" />
+    <TextView
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/tuner_tvFrequency"
+        android:layout_weight="0.7"
+        android:layout_gravity="center_horizontal"
+        android:textSize="48sp"
+        android:text="0 Hz" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/tuner_bPlay"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32sp"
+        android:text="Play" />
+    <View
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1" />
+</LinearLayout>

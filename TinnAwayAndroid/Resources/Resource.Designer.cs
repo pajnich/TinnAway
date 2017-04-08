@@ -93,6 +93,15 @@ namespace TinnAwayAndroid
 			// aapt resource value: 0x7f06000a
 			public const int sounds_of_nature_lvSongs = 2131099658;
 			
+			// aapt resource value: 0x7f06000d
+			public const int tuner_bPlay = 2131099661;
+			
+			// aapt resource value: 0x7f06000b
+			public const int tuner_sbFrequency = 2131099659;
+			
+			// aapt resource value: 0x7f06000c
+			public const int tuner_tvFrequency = 2131099660;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
