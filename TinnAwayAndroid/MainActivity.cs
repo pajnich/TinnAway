@@ -45,6 +45,11 @@ namespace TinnAwayAndroid
             {
                 StartActivity(typeof(TunerActivity));
             };
+            Button bAlarmCLock = (Button)FindViewById(Resource.Id.bAlarmClock);
+            bAlarmCLock.Click += delegate
+            {
+                StartActivity(typeof(AlarmClockActivity));
+            };
         }
     }
 }

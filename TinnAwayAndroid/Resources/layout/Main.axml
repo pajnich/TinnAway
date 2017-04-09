@@ -18,14 +18,14 @@
                 android:text="@string/sound_generator"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bSoundGenerator" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bSoundGenerator"
+                android:layout_weight="0.5" />
             <Button
                 android:text="@string/sound_mixer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bSoundMixer" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bSoundMixer"
+                android:layout_weight="0.5" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -36,14 +36,14 @@
                 android:text="@string/sounds_of_nature"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bSoundsOfNature" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bSoundsOfNature"
+                android:layout_weight="0.5" />
             <Button
                 android:text="@string/alarm_clock"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bAlarmClock" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bAlarmClock"
+                android:layout_weight="0.5" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -54,32 +54,32 @@
                 android:text="@string/authored_music"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bAuthoredMusic" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bAuthoredMusic"
+                android:layout_weight="0.5" />
             <Button
                 android:text="@string/record_music"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bRecordMusic" 
-                android:layout_weight="0.5"/>
+                android:id="@+id/bRecordMusic"
+                android:layout_weight="0.5" />
         </LinearLayout>
-      <LinearLayout
+        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25">
-        <Button
-            android:text="@string/tuner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/bTuner"
-            android:layout_weight="0.5"/>
-        <Button
-            android:text="@string/settings"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/bSettings"
-            android:layout_weight="0.5"/>
-      </LinearLayout>
+            <Button
+                android:text="@string/tuner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bTuner"
+                android:layout_weight="0.5" />
+            <Button
+                android:text="@string/settings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bSettings"
+                android:layout_weight="0.5" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
