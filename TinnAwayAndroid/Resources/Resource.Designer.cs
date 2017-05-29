@@ -1984,8 +1984,17 @@ namespace TinnAwayAndroid
 			// aapt resource value: 0x7f0b0080
 			public const int sound_generator_lvSongs = 2131427456;
 			
+			// aapt resource value: 0x7f0b0083
+			public const int sound_mixer_bPlay = 2131427459;
+			
+			// aapt resource value: 0x7f0b0082
+			public const int sound_mixer_sbNoise = 2131427458;
+			
 			// aapt resource value: 0x7f0b0081
-			public const int sounds_of_nature_lvSongs = 2131427457;
+			public const int sound_mixer_sbSong = 2131427457;
+			
+			// aapt resource value: 0x7f0b0084
+			public const int sounds_of_nature_lvSongs = 2131427460;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int spacer = 2131427375;
@@ -2044,14 +2053,14 @@ namespace TinnAwayAndroid
 			// aapt resource value: 0x7f0b0039
 			public const int topPanel = 2131427385;
 			
-			// aapt resource value: 0x7f0b0084
-			public const int tuner_bPlay = 2131427460;
+			// aapt resource value: 0x7f0b0087
+			public const int tuner_bPlay = 2131427463;
 			
-			// aapt resource value: 0x7f0b0082
-			public const int tuner_sbFrequency = 2131427458;
+			// aapt resource value: 0x7f0b0085
+			public const int tuner_sbFrequency = 2131427461;
 			
-			// aapt resource value: 0x7f0b0083
-			public const int tuner_tvFrequency = 2131427459;
+			// aapt resource value: 0x7f0b0086
+			public const int tuner_tvFrequency = 2131427462;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int up = 2131427336;
@@ -2260,13 +2269,16 @@ namespace TinnAwayAndroid
 			public const int sound_generator = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int sounds_of_nature = 2130903092;
+			public const int sound_mixer = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int support_simple_spinner_dropdown_item = 2130903093;
+			public const int sounds_of_nature = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int tuner = 2130903094;
+			public const int support_simple_spinner_dropdown_item = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public const int tuner = 2130903095;
 			
 			static Layout()
 			{

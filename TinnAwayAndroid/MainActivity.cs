@@ -50,6 +50,11 @@ namespace TinnAwayAndroid
             {
                 StartActivity(typeof(AlarmClockMidActivity));
             };
+            Button bSoundMixer = (Button)FindViewById(Resource.Id.bSoundMixer);
+            bSoundMixer.Click += delegate
+            {
+                StartActivity(typeof(SoundMixerActivity));
+            };
         }
     }
 }

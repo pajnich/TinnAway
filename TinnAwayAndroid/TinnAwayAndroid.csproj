@@ -98,6 +98,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundGeneratorActivity.cs" />
+    <Compile Include="SoundMixerActivity.cs" />
     <Compile Include="SoundsOfNatureActivity.cs" />
     <Compile Include="TunerActivity.cs" />
   </ItemGroup>
@@ -125,6 +126,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\go_to_sleep.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\sound_mixer.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
