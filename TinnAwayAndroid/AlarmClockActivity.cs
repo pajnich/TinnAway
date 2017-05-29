@@ -34,7 +34,7 @@ namespace TinnAwayAndroid
                 Intent checkEventsIntent = (new Intent(this, typeof(CheckEventsService)));
 
                 PendingIntent pendingServiceIntent = PendingIntent.GetService(this, 0, checkEventsIntent, PendingIntentFlags.UpdateCurrent);
-                alarm.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime(), pendingServiceIntent);
+                alarm.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + 10000, pendingServiceIntent);
             };
         }
     }

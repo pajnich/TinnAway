@@ -20,7 +20,12 @@ namespace TinnAwayAndroid.IntentService
         {
             Log.Debug("DemoService", "DemoService started");
 
-            LaunchNotification("askdj", new DateTime(), "?");
+            var alarmTriggeredIntent = new Intent(this, typeof(AlarmTriggeredActivity));
+            alarmTriggeredIntent.SetFlags(ActivityFlags.NewTask);
+            StartActivity(alarmTriggeredIntent);
+
+            // use the commented method call if instead of a sound file starting to play at once you just want to show a notification
+            //LaunchNotification("Alarm clock", new DateTime(), "?");
 
             return StartCommandResult.Sticky;
         }

@@ -5,29 +5,21 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-  
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:id="@+id/authored_music_lvSongs"
-        android:layout_weight="0.7"/>
+        android:layout_weight="0.7" />
     <LinearLayout
-      android:orientation="vertical"
-      android:layout_height="match_parent"
-      android:layout_width="0dp"
-      android:layout_weight="0.3">
-
-      <Button
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:layout_weight="0.2"
-        android:text="@string/play"/>
-
-      <View
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:layout_weight="0.8"/>
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="0.3">
+        <View
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="0.8" />
     </LinearLayout>
 </LinearLayout>

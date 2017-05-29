@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmClockActivity.cs" />
+    <Compile Include="AlarmTriggeredActivity.cs" />
     <Compile Include="AuthoredMusicActivity.cs" />
     <Compile Include="IntentService\CheckEventsService.cs" />
     <Compile Include="MainActivity.cs" />
@@ -113,6 +114,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\tuner.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\alarm_triggered.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -150,7 +154,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

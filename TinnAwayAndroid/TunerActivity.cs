@@ -54,7 +54,9 @@ namespace TinnAwayAndroid
             tvFrequency.Text        = currFrequency.ToString();
             sbFrequency.Progress    = 50;
             sbFrequency.Max         = 6000;
-            sbFrequency.SetProgress(currFrequency, true);
+            sbFrequency.Progress = currFrequency;
+            
+            //sbFrequency.SetProgress(currFrequency, true);
         }
 
         private void setListeners()

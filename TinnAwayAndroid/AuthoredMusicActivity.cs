@@ -17,40 +17,91 @@ namespace TinnAwayAndroid
     [Activity(Label = "AuthoredMusicActivity")]
     public class AuthoredMusicActivity : Activity
     {
+        List<string> rawFileNames;
+
+        Dictionary<string, MediaPlayer> mediaPlayers;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.authored_music);
 
+            initializeValues();
+
             setupSongListView();
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+
+            stopPlaying();
+        }
+
+        private void stopPlaying()
+        {
+            foreach (KeyValuePair<string, MediaPlayer> entry in mediaPlayers)
+            {
+                entry.Value.Stop();
+            }
+        }
+
+        private void initializeValues()
+        {
+
+            mediaPlayers = new Dictionary<string, MediaPlayer>();
+            rawFileNames = new List<string>();
         }
 
         private void setupSongListView()
         {
-            List<string> items = getRawFilesAsStrings();
+            rawFileNames = getRawFileNames();
 
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+            fillMediaPlayers();
+
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, rawFileNames);
 
             ListView lvSongs = (ListView)FindViewById(Resource.Id.authored_music_lvSongs);
             lvSongs.Adapter = adapter;
 
             setListViewItemClickListener(lvSongs);
+
         }
 
-        private void setListViewItemClickListener(ListView lvSongs)
+        private void fillMediaPlayers()
         {
-            lvSongs.ItemClick += (object sender, ItemClickEventArgs e) =>
+            foreach (string rawFileName in rawFileNames)
             {
-                String selectedFromList = (String)lvSongs.GetItemAtPosition(e.Position);
-                var resourceId = (int)typeof(Resource.Raw).GetField("auth_" + selectedFromList).GetValue(null);
+                var resourceId = (int)typeof(Resource.Raw).GetField("auth_" + rawFileName).GetValue(null);
                 MediaPlayer mediaPlayer;
                 mediaPlayer = MediaPlayer.Create(this, resourceId);
-                mediaPlayer.Start();
+                mediaPlayers.Add(rawFileName, mediaPlayer);
+            }
+        }
+
+        // set onclick listeners for the song list
+        private void setListViewItemClickListener(ListView lvSongs)
+        {
+            // when an item is clicked
+            lvSongs.ItemClick += (object sender, ItemClickEventArgs e) =>
+            {
+                // get the clicked song name
+                String selectedFromList = (String)lvSongs.GetItemAtPosition(e.Position);
+                // stop playing the current song
+                foreach (KeyValuePair<string, MediaPlayer> entry in mediaPlayers)
+                {
+                    if (entry.Value.IsPlaying)
+                    {
+                        entry.Value.Stop();
+                    }
+                }
+                // start playing the clicked song
+                mediaPlayers[selectedFromList].Start();
             };
         }
 
-        private List<string> getRawFilesAsStrings()
+        private List<string> getRawFileNames()
         {
             List<string> items = new List<string>();
             var fields = typeof(Resource.Raw).GetFields();
@@ -60,7 +111,7 @@ namespace TinnAwayAndroid
                 {
                     items.Add(fieldInfo.Name.Substring(5));
                 }
-                
+
             }
             return items;
         }
