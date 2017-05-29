@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <View
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="0.25" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5">
+        <View
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25" />
+        <TextView
+            android:text="Enter the number of minutes before you will likely fall asleep"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:id="@+id/go_to_sleep_tvNumberOfMinutes" />
+        <EditText
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:id="@+id/go_to_sleep_etNumberOfMinutes"
+            android:text="60" />
+        <Button
+            android:text="Start Sleeping Song"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:id="@+id/go_to_sleep_bStartLullaby" />
+        <View
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="0.25" />
+    </LinearLayout>
+    <View
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="0.25" />
+</LinearLayout>

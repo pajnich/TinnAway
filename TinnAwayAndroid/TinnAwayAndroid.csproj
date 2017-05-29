@@ -89,8 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmClockActivity.cs" />
+    <Compile Include="AlarmClockMidActivity.cs" />
     <Compile Include="AlarmTriggeredActivity.cs" />
     <Compile Include="AuthoredMusicActivity.cs" />
+    <Compile Include="GoToSleepActivity.cs" />
     <Compile Include="IntentService\CheckEventsService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -117,6 +119,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\alarm_triggered.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\alarm_clock_mid.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\go_to_sleep.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
